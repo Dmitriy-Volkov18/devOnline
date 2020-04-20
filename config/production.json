@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb+srv://dima2099:dima2099@soc-net-dev-lfiwy.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "secretToken",
+    "githubClientId": "2f70b3a5a99fa29aa607",
+    "githubSecret": "ecbd3351a35bcb84adb51aa480735464d25c8231"
+}
