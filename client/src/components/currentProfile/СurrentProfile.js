@@ -3,17 +3,17 @@ import {Link} from 'react-router-dom'
 import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import Spinner from '../layout/Spinner'
-import {getProfileById} from '../../actions/profile'
-import ProfileTop from './ProfileTop'
-import ProfileAbout from './ProfileAbout'
-import ProfileExperience from './ProfileExperience'
-import ProfileEducation from './ProfileEducation'
-import ProfileGithub from './ProfileGithub'
+import {getCurrentProfile} from '../../actions/profile'
+import ProfileTop from '../profile/ProfileTop'
+import ProfileAbout from '../profile/ProfileAbout'
+import ProfileExperience from '../profile/ProfileExperience'
+import ProfileEducation from '../profile/ProfileEducation'
+import ProfileGithub from '../profile/ProfileGithub'
 
-const Profile = ({getProfileById, profile: {profile, loading}, auth, match}) => {
+const CurrentProfile = ({getCurrentProfile, profile: {profile, loading}, auth}) => {
     useEffect(() => {
-        getProfileById(match.params.id)
-    }, [getProfileById, match.params.id])
+        getCurrentProfile()
+    }, [getCurrentProfile])
     return (
         <Fragment>
             {profile === null || loading ? <Spinner /> : 
@@ -63,8 +63,8 @@ const Profile = ({getProfileById, profile: {profile, loading}, auth, match}) => 
     )
 }
 
-Profile.propTypes = {
-    getProfileById: PropTypes.func.isRequired,
+CurrentProfile.propTypes = {
+    getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired
 }
@@ -74,4 +74,4 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
-export default connect(mapStateToProps, {getProfileById})(Profile)
+export default connect(mapStateToProps, {getCurrentProfile})(CurrentProfile)

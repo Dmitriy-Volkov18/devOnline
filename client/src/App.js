@@ -4,7 +4,7 @@ import Navbar from './components/layout/Navbar'
 import Landing from './components/layout/Landing'
 import Register from './components/auth/Register'
 import Login from './components/auth/Login'
-import Dashboard from './components/dashboard/Dashboard'
+import Settings from './components/settings/Settings'
 import Alert from './components/layout/Alert'
 import CreateProfile from './components/profile-forms/CreateProfile'
 import EditProfile from './components/profile-forms/EditProfile'
@@ -15,7 +15,8 @@ import Profiles from './components/profiles/Profiles'
 import Profile from './components/profile/Profile'
 import Posts from './components/posts/Posts'
 import Post from './components/post/Post'
-
+import Pagination from './components/pagination/Pagination'
+import CurrentProfile from './components/currentProfile/СurrentProfile'
 
 import {Provider} from 'react-redux'
 import store from './store'
@@ -45,7 +46,8 @@ const App = () => {
             <Route exact path="/login" component={Login} />
             <Route exact path="/profiles" component={Profiles} />
             <Route exact path="/profile/:id" component={Profile} />
-            <PrivateRoute exact path="/dashboard" component={Dashboard} />
+            <PrivateRoute exact path="/currentProfile" component={CurrentProfile} />
+            <PrivateRoute exact path="/settings" component={Settings} />
             <PrivateRoute exact path="/create-profile" component={CreateProfile} />
             <PrivateRoute exact path="/edit-profile" component={EditProfile} />
             <PrivateRoute exact path="/add-experience" component={AddExperience} />

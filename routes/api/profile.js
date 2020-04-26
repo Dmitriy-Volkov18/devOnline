@@ -25,8 +25,8 @@ router.get('/me', auth, async (req, res) => {
 })
 
 router.post('/', [auth, [
-    check('status', 'Status is required').not().isEmpty(),
-    check('skills', 'Skills is required').not().isEmpty()
+    check('status', 'Статус обязателен').not().isEmpty(),
+    check('skills', 'Навыки обязательны').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req)
 
@@ -129,9 +129,9 @@ router.delete('/', auth, async (req, res) => {
 })
 
 router.put('/experience', [auth, [
-    check('title', 'Title is required').not().isEmpty(),
-    check('company', 'Company is required').not().isEmpty(),
-    check('from', 'From date is required').not().isEmpty()
+    check('title', 'Название обязательно').not().isEmpty(),
+    check('company', 'Компания обязательно').not().isEmpty(),
+    check('from', 'От - обязательно').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req)
 
@@ -177,9 +177,9 @@ router.delete('/experience/:exp_id', auth, async (req, res) => {
 
 
 router.put('/education', [auth, [
-    check('school', 'School is required').not().isEmpty(),
-    check('degree', 'Degree is required').not().isEmpty(),
-    check('fieldofstudy', 'Field of study is required').not().isEmpty(),
+    check('school', 'Школа обязательно').not().isEmpty(),
+    check('degree', 'Степень обязательно').not().isEmpty(),
+    check('fieldofstudy', 'Дисциплина обязательно').not().isEmpty(),
     check('from', 'From date is required').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req)

@@ -8,7 +8,7 @@ const Profile = require('../../models/Profile')
 const User = require('../../models/User')
 
 router.post('/', [auth, [
-    check('text', 'Text is required').not().isEmpty()
+    check('text', 'Пустая форма').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req)
 
@@ -141,7 +141,7 @@ router.put('/unlike/:post_id', auth, async (req, res) => {
 })
 
 router.post('/comment/:id', [auth, [
-    check('text', 'Text is required').not().isEmpty()
+    check('text', 'Пустая форма').not().isEmpty()
 ]], async (req, res) => {
     const errors = validationResult(req)
 

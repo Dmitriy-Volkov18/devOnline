@@ -4,22 +4,22 @@ import PropTypes from 'prop-types'
 import {connect} from 'react-redux'
 import {getCurrentProfile, deleteAccount} from '../../actions/profile'
 import Spinner from '../layout/Spinner'
-import DashboardActions from './DashboardActions'
+import SettingsActions from './SettingsActions'
 import Experience from './Experience'
 import Education from './Education'
 
 
-const Dashboard = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {profile, loading}}) => {
+const Settings = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {profile, loading}}) => {
     useEffect(() => {
         getCurrentProfile()
     }, [getCurrentProfile])
 
     return loading && profile === null ? <Spinner /> : <Fragment>
-        <h1 className="large text-primary">Профиль</h1>
+        <h1 className="large text-primary">Настройки профиля</h1>
         <p className="lead"><i className="fas fa-user">Добро пожаловать, {user && user.name}</i></p>
         {profile !== null ? 
             (<Fragment>
-                <DashboardActions />
+                <SettingsActions />
                 <Experience experience={profile.experience}/>
                 <Education education={profile.education}/>
 
@@ -37,7 +37,7 @@ const Dashboard = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {pr
     </Fragment>
 }
 
-Dashboard.propTypes = {
+Settings.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     deleteAccount: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
@@ -49,4 +49,4 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-export default connect(mapStateToProps, {getCurrentProfile, deleteAccount})(Dashboard)
+export default connect(mapStateToProps, {getCurrentProfile, deleteAccount})(Settings)

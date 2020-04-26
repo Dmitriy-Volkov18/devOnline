@@ -20,8 +20,8 @@ router.get('/', auth, async (req, res) => {
 })
 
 router.post('/', [
-    check('email', 'Please include a valid email').isEmail(),
-    check('password', 'Password is required').exists()
+    check('email', 'Пожалуйста, используйте корректный email').isEmail(),
+    check('password', 'Пароль обязателен').exists()
 ], async (req, res) => {
     const errors = validationResult(req)
     if(!errors.isEmpty()){

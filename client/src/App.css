@@ -318,7 +318,6 @@ button {
   z-index: 1;
   width: 100%;
   top: 0;
-  opacity: 0.9;
 }
 
 .navbar ul {
@@ -498,6 +497,26 @@ button {
   margin-bottom: 0.5rem;
 }
 
+.paginate{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination li{
+  float: left;
+  background-color: #fff;
+  padding: 5px 15px;
+  border: 1px solid var(--light-color);
+}
+
+.pagination li:not(:last-child){
+  border-right: none;
+}
+
+.pagination a{
+  color: var(--light-color);
+}
+
 /* Mobile Styles */
 @media (max-width: 700px) {
   .container {
@@ -539,6 +558,29 @@ button {
   .navbar .welcome {
     display: none;
   }
+
+
+/*
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar h1 {
+    margin-bottom: 1rem;
+  }
+
+  .navbar .welcome {
+    display: none;
+  }
+*/
+
 
   /* Profiles Page */
   .profile {
