@@ -1,14 +1,17 @@
 {
-  "name": "devnetwork",
+  "name": "devonline",
   "version": "1.0.0",
-  "description": "Social network for developers",
+  "description": "Forum for developers",
   "main": "server.js",
+  "engines": {
+    "node": "13.5.0"
+  },
   "scripts": {
     "start": "node server",
     "server": "nodemon server",
     "client": "npm start --prefix client",
     "dev": "concurrently \"npm run server \" \"npm run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install ==prefix client && npm run build --prefix client"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Dmitriy Volkov",
   "license": "ISC",
