@@ -14,7 +14,7 @@ const ProfileEducation = ({education: {
     return (
         <div>
             <h3 className="text-dark">{school}</h3>
-            <p><Moment format='YYYY/MM/DD'>{from}</Moment> - {!to ? 'Now' : <Moment format='YYYY/MM/DD'>{to}</Moment>}</p> 
+            <p><Moment format='DD/MM/YYYY'>{from}</Moment> - {!to ? 'Сейчас' : <Moment format='DD/MM/YYYY'>{to}</Moment>}</p> 
             <p><strong>Степень: </strong> {degree}</p>
             <p><strong>Дисциплина: </strong> {fieldofstudy}</p>
             <p><strong>Описание: </strong> {description}</p>

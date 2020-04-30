@@ -22,7 +22,7 @@ const PostItem = ({addLike, removeLike, deletePost, auth, post: {_id, text, name
               {text}
             </p>
              <p class="post-date">
-                Опубликовано в <Moment format="YYYY/MM/DD">{date}</Moment>
+                Опубликовано <Moment format="DD/MM/YYYY">{date}</Moment>
             </p>
 
             {

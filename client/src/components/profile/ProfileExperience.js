@@ -14,7 +14,7 @@ const ProfileExperience = ({experience: {
     return (
         <div>
             <h3 className="text-dark">{company}</h3>
-            <p><Moment format='YYYY/MM/DD'>{from}</Moment> - {!to ? 'Now' : <Moment format='YYYY/MM/DD'>{to}</Moment>}</p> 
+            <p><Moment format='DD/MM/YYYY'>{from}</Moment> - {!to ? 'Сейчас' : <Moment format='DD/MM/YYYY'>{to}</Moment>}</p> 
             <p><strong>Должность: </strong> {title}</p>
             <p><strong>Описание: </strong> {description}</p>
         </div>

@@ -28,7 +28,7 @@ const CommentItem = ({
               {text}
             </p>
              <p class="post-date">
-                Опубликовано в <Moment format='YYYY/MM/DD'>{date}</Moment>
+                Опубликовано в <Moment format='DD/MM/YYYY'>{date}</Moment>
             </p>
             {
                 !auth.loading && user === auth.user._id && (
