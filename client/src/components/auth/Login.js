@@ -27,7 +27,6 @@ export const Login = ({login, isAuthenticated}) => {
     return (
         <Fragment>
             <h1 className="large text-primary">Вход</h1>
-            <p className="lead"><i className="fas fa-user"></i> Вход в свой аккаунт</p>
             
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">

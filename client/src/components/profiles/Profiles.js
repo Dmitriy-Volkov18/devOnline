@@ -24,8 +24,8 @@ const Profiles = ({getProfiles, profile: {profiles, loading}}) => {
     return (
         <Fragment>
             {loading ? <Spinner /> : 
-                <Fragment>
-                    <h1 className="large text-primary">Разработчики</h1>
+                <Fragment >
+                    <h1 className="large text-primary dev-text">Разработчики</h1>
                     <div className="profiles">
                         {currentProfiles.length > 0 ? (currentProfiles.map(profile => (
                             <ProfileItem key={profile._id} profile={profile} />

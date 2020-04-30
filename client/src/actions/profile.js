@@ -83,10 +83,10 @@ export const createProfile = (formData, history, edit = false) => async dispatch
             payload: res.data
         })
 
-        dispatch(setAlert(edit ? 'Profile Updated' : 'Profile Created', 'success'))
+        dispatch(setAlert(edit ? 'Профиль обновлён' : 'Профиль создан', 'success'))
 
         if(!edit){
-            history.push('/dashboard')
+            history.push('/settings')
         }
     }catch(err){
         const errors = err.response.data.errors
@@ -116,9 +116,7 @@ export const addExperience = (formData, history) => async dispatch => {
             type: UPDATE_PROFILE,
             payload: res.data
         })
-
-        dispatch(setAlert('Experience Added', 'success'))
-        history.push('/dashboard')
+        history.push('/settings')
         
     }catch(err){
         const errors = err.response.data.errors
@@ -149,8 +147,7 @@ export const addEducation = (formData, history) => async dispatch => {
             payload: res.data
         })
 
-        dispatch(setAlert('Education Added', 'success'))
-        history.push('/dashboard')
+        history.push('/settings')
         
     }catch(err){
         const errors = err.response.data.errors
@@ -174,8 +171,6 @@ export const deleteExperience = id => async dispatch => {
             type: UPDATE_PROFILE,
             payload: res.data
         })
-
-        dispatch(setAlert('Experience removed', 'success'))
     }catch(err){
         dispatch({
             type: PROFILE_ERROR,
@@ -192,8 +187,6 @@ export const deleteEducation = id => async dispatch => {
             type: UPDATE_PROFILE,
             payload: res.data
         })
-
-        dispatch(setAlert('Education removed', 'success'))
     }catch(err){
         dispatch({
             type: PROFILE_ERROR,
@@ -203,14 +196,14 @@ export const deleteEducation = id => async dispatch => {
 }
 
 export const deleteAccount = () => async dispatch => {
-    if(window.confirm('Are you sure? This can Not be undone!')){
+    if(window.confirm('Вы уверены? Это действие нельзя отменить!')){
         try{
             await axios.delete('/api/profile')
     
             dispatch({type: CLEAR_PROFILE})
             dispatch({type: ACCOUNT_DELETED})
     
-            dispatch(setAlert('Your account has been deleted'))
+            dispatch(setAlert('Ваш аккаунт удалён'))
         }catch(err){
             dispatch({
                 type: PROFILE_ERROR,

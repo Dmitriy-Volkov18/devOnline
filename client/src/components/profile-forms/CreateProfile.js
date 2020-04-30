@@ -50,9 +50,7 @@ const CreateProfile = ({createProfile, history}) => {
         <Fragment>
             <h1 className="large text-primary">Создай профиль</h1>
 
-            <p className="lead">
-                <i className="fas fa-user"></i> Предоставьте информацию о вас
-            </p>
+            <p className="lead">Предоставьте информацию о вас</p>
 
             <small>* - обязательное поле</small>
 
@@ -138,7 +136,7 @@ const CreateProfile = ({createProfile, history}) => {
 
                 
                 <input type="submit" className="btn btn-primary my-1" value="Создать профиль" />
-                <Link className="btn btn-light my-1" to="/dashboard">Назад</Link>
+                <Link className="btn btn-light my-1" to="/settings">Назад</Link>
             </form>
         </Fragment>
     )

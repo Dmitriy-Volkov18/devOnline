@@ -25,9 +25,7 @@ const AddEducation = ({addEducation, history}) => {
     return (
         <Fragment>
             <h1 class="large text-primary">Добавить образование</h1>
-            <p class="lead">
-                <i class="fas fa-code-branch"></i> Добавь информацию о школе или учреждении
-            </p>
+            <p class="lead">Добавь информацию о школе или учреждении</p>
             <small>* - обязательное поле</small>
             <form class="form" onSubmit={e => {
                 e.preventDefault()
@@ -66,7 +64,7 @@ const AddEducation = ({addEducation, history}) => {
                     ></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary my-1" value="Добавить" />
-                <Link class="btn btn-light my-1" to="/dashboard">Назад</Link>
+                <Link class="btn btn-light my-1" to="/settings">Назад</Link>
             </form>
         </Fragment>
     )

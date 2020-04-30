@@ -35,11 +35,10 @@ export const Register = ({setAlert, register, isAuthenticated}) => {
     return (
         <Fragment>
             <h1 className="large text-light">Регистрация</h1>
-            <p className="lead"><i className="fas fa-user"></i> Создай свой аккаунт</p>
 
             <form className="form" onSubmit={e => onSubmit(e)}>
                 <div className="form-group">
-                    <input type="text" placeholder="Имя" name="name" value={name} onChange={e => onChange(e)}  />
+                    <input type="text" placeholder="Имя Фамилия" name="name" value={name} onChange={e => onChange(e)}  />
                 </div>
                 <div className="form-group">
                     <input type="email" placeholder="Email" name="email" value={email} onChange={e => onChange(e)} />

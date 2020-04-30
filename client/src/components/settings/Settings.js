@@ -16,7 +16,7 @@ const Settings = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {pro
 
     return loading && profile === null ? <Spinner /> : <Fragment>
         <h1 className="large text-primary">Настройки профиля</h1>
-        <p className="lead"><i className="fas fa-user">Добро пожаловать, {user && user.name}</i></p>
+        <p className="lead">Добро пожаловать, {user && user.name}</p>
         {profile !== null ? 
             (<Fragment>
                 <SettingsActions />
@@ -24,9 +24,7 @@ const Settings = ({getCurrentProfile, deleteAccount, auth: {user}, profile: {pro
                 <Education education={profile.education}/>
 
                 <div className="my-2">
-                    <button className="btn btn-primary" onClick={() => deleteAccount()}>
-                        <i className="fas fa-user-minus"> Удалить мой аккаунт</i>
-                    </button>
+                    <button className="btn btn-primary" onClick={() => deleteAccount()}>Удалить мой аккаунт</button>
                 </div>
             </Fragment>) : 
             (<Fragment>

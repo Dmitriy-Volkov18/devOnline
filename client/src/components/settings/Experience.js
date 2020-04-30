@@ -12,7 +12,7 @@ const Experience = ({experience, deleteExperience}) => {
             <td>
                 <Moment format="YYYY/MM/DD">{exp.from}</Moment> - {' '}
                 {
-                    exp.to === null ? ('Now') : (<Moment format="YYYY/MM/DD">{exp.to}</Moment>)
+                    exp.to === null ? ('Сейчас') : (<Moment format="YYYY/MM/DD">{exp.to}</Moment>)
                 }
             </td>
             <td>
@@ -23,17 +23,19 @@ const Experience = ({experience, deleteExperience}) => {
     return (
         <Fragment>
             <h2 className="m2-2">Опыт работы</h2>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Компания</th>
-                        <th className="hide-sm">Название</th>
-                        <th className="hide-sm">Года</th>
-                        <th />
-                    </tr>
-                </thead>
-                <tbody>{experiences}</tbody>
-            </table>
+            <div className="table-container1">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Компания</th>
+                            <th>Должность</th>
+                            <th>Года</th>
+                            <th>Удаление</th>
+                        </tr>
+                    </thead>
+                    <tbody>{experiences}</tbody>
+                </table>
+            </div>
         </Fragment>
     )
 }

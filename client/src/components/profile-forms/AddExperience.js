@@ -25,9 +25,7 @@ const AddExperience = ({addExperience, history}) => {
     return (
         <Fragment>
             <h1 class="large text-primary">Добавить опыт работы</h1>
-            <p class="lead">
-                <i class="fas fa-code-branch"></i> Добавьте информацию о том, какие позиции как программист вы занимали
-            </p>
+            <p class="lead">Добавьте информацию о том, какие позиции как программист вы занимали</p>
             <small>* - обязательное поле</small>
 
             <form class="form" onSubmit={e => {
@@ -35,7 +33,7 @@ const AddExperience = ({addExperience, history}) => {
                 addExperience(formData, history)
             }}>
                 <div class="form-group">
-                    <input type="text" placeholder="* Название работы" name="title" value={title} onChange={e => onChange(e)} required />
+                    <input type="text" placeholder="* Должность" name="title" value={title} onChange={e => onChange(e)} required />
                 </div>
                 <div class="form-group">
                     <input type="text" placeholder="* Компания" name="company" value={company} onChange={e => onChange(e)} required />
@@ -67,7 +65,7 @@ const AddExperience = ({addExperience, history}) => {
                     ></textarea>
                 </div>
                 <input type="submit" class="btn btn-primary my-1" value="Добавить" />
-                <Link class="btn btn-light my-1" to="/dashboard">Назад</Link>
+                <Link class="btn btn-light my-1" to="/settings">Назад</Link>
             </form>
         </Fragment>
     )

@@ -10,10 +10,9 @@ export const Navbar = ({auth: {isAuthenticated, loading}, logout}) => {
         <ul>
             <li><Link to="/profiles">Разработчики</Link></li>
             <li><Link to="/posts">Посты</Link></li>
-            <li><Link to="/currentProfile"><i className="fas fa-user"></i> {' '}<span className='hide-sm'>Профиль</span></Link></li>
+            <li><Link to="/currentProfile">Профиль</Link></li>
             <li><Link to="/settings">Настройки профиля</Link></li>
-            <li><a onClick={logout} href="#!"><i className="fas fa-sign-out-alt"></i> {' '}
-            <span className='hide-sm'>Выйти</span></a></li>
+            <li><a onClick={logout} href="#!">Выйти</a></li>
         </ul>
     )
 

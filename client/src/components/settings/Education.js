@@ -12,7 +12,7 @@ const Education = ({education, deleteEducation}) => {
             <td>
                 <Moment format="YYYY/MM/DD">{edu.from}</Moment> - {' '}
                 {
-                    edu.to === null ? ('Now') : (<Moment format="YYYY/MM/DD">{edu.to}</Moment>)
+                    edu.to === null ? ('Сейчас') : (<Moment format="YYYY/MM/DD">{edu.to}</Moment>)
                 }
             </td>
             <td>
@@ -23,17 +23,19 @@ const Education = ({education, deleteEducation}) => {
     return (
         <Fragment>
             <h2 className="m2-2">Образование</h2>
-            <table className="table">
-                <thead>
-                    <tr>
-                        <th>Школа</th>
-                        <th className="hide-sm">Степень</th>
-                        <th className="hide-sm">Года</th>
-                        <th />
-                    </tr>
-                </thead>
-                <tbody>{educations}</tbody>
-            </table>
+            <div className="table-container2">
+                <table className="table">
+                    <thead>
+                        <tr>
+                            <th>Учреждение</th>
+                            <th>Степень</th>
+                            <th>Года</th>
+                            <th>Удаление</th>
+                        </tr>
+                    </thead>
+                    <tbody>{educations}</tbody>
+                </table>
+            </div>
         </Fragment>
     )
 }

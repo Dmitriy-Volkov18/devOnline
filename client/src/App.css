@@ -1,8 +1,8 @@
 /* Global Styles */
 :root {
-  --primary-color: #c7969f;
+  --primary-color: #e65277;
   --dark-color: #1b1b22;
-  --light-color: #87a6c0;
+  --light-color: #00aab2;
   --danger-color: #dc3545;
   --success-color: #28a745;
 }
@@ -143,15 +143,6 @@ img {
   outline: none;
 }
 
-.badge {
-  font-size: 0.8rem;
-  padding: 0.1rem;
-  text-align: center;
-  margin: 0.3rem;
-  background: var(--light-color);
-  color: #333;
-}
-
 .alert {
   padding: 0.8rem;
   margin: 1rem 0;
@@ -162,7 +153,6 @@ img {
 
 .btn-primary,
 .bg-primary,
-.badge-primary,
 .alert-primary {
   background: var(--primary-color);
   color: #fff;
@@ -175,7 +165,6 @@ img {
 
 .btn-light,
 .bg-light,
-.badge-light,
 .alert-light {
   background: var(--light-color);
   color: #fff;
@@ -183,7 +172,6 @@ img {
 
 .btn-dark,
 .bg-dark,
-.badge-dark,
 .alert-dark {
   background: var(--dark-color);
   color: #fff;
@@ -191,7 +179,6 @@ img {
 
 .btn-danger,
 .bg-danger,
-.badge-danger,
 .alert-danger {
   background: var(--danger-color);
   color: #fff;
@@ -199,7 +186,6 @@ img {
 
 .btn-success,
 .bg-success,
-.badge-success,
 .alert-success {
   background: var(--success-color);
   color: #fff;
@@ -207,7 +193,6 @@ img {
 
 .btn-white,
 .bg-white,
-.badge-white,
 .alert-white {
   background: #fff;
   color: #333;
@@ -218,8 +203,7 @@ img {
   opacity: 0.8;
 }
 
-.bg-light,
-.badge-light {
+.bg-light {
   border: #ccc solid 1px;
 }
 
@@ -296,7 +280,7 @@ button {
 .form .social-input i.fa-linkedin {
   color: #0077b5;
 }
-
+/*
 .table th,
 .table td {
   padding: 1rem;
@@ -306,6 +290,34 @@ button {
 .table th {
   background: var(--light-color);
   color: #fff;
+}*/
+
+
+table {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  table-layout: fixed;
+}
+
+table tr {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  padding: .35em;
+}
+
+table th,
+table td {
+  padding: .625em;
+  text-align: center;
+}
+
+table th {
+  font-size: .85em;
+  letter-spacing: .1em;
+  text-transform: uppercase;
 }
 
 /* Navbar */
@@ -314,7 +326,7 @@ button {
   justify-content: space-between;
   align-items: center;
   padding: 0.7rem 2rem;
-  position: fixed;
+  position: relative;
   z-index: 1;
   width: 100%;
   top: 0;
@@ -334,16 +346,7 @@ button {
   color: var(--primary-color);
 }
 
-.navbar .welcome span {
-  margin-right: 0.6rem;
-}
-
 /* Landing Page */
-.landing {
-  /*position: relative;
-  background: url('./img/showcase.jpg') no-repeat center center/cover;
-  height: 100vh;*/
-}
 
 .landing-inner {
   color: #1b1b22;
@@ -378,6 +381,16 @@ button {
     'exp edu'
     'github github';
   grid-gap: 1rem;
+}
+
+.edit-profile-btn-cont{
+  display: flex;
+  justify-content: center;
+}
+
+.edit-profile-btn-cont .editbtn{
+  width: 100%;
+  text-align: center;
 }
 
 .profile-top {
@@ -484,8 +497,8 @@ button {
 }
 
 .post .comment-count {
-  background: var(--light-color);
-  color: var(--primary-color);
+  background: #fff;
+  color: var(--dark-color);
   padding: 0.1rem 0.2rem;
   border-radius: 5px;
   font-size: 0.8rem;
@@ -518,7 +531,7 @@ button {
 }
 
 /* Mobile Styles */
-@media (max-width: 700px) {
+@media screen and (max-width: 600px) {
   .container {
     margin-top: 8rem;
   }
@@ -540,7 +553,7 @@ button {
     font-size: 1rem;
   }
 
-  /* Navbar */
+  /* Navbar *//*
   .navbar {
     display: block;
     text-align: center;
@@ -551,16 +564,13 @@ button {
     justify-content: center;
   }
 
-  .navbar h1 {
+  .navbar h3 {
     margin-bottom: 1rem;
   }
-
-  .navbar .welcome {
-    display: none;
-  }
+*/
 
 
-/*
+
   .navbar {
     flex-direction: column;
     justify-content: center;
@@ -572,14 +582,20 @@ button {
     justify-content: center;
   }
 
-  .navbar h1 {
-    margin-bottom: 1rem;
+  .navbar ul li{
+    margin: 2px;
   }
 
-  .navbar .welcome {
-    display: none;
+  .navbar ul li a{
+    font-size: 1.4rem;
   }
-*/
+
+
+  .navbar h3 {
+    margin-bottom: 1rem;
+    font-size: 2rem;
+  }
+
 
 
   /* Profiles Page */
@@ -617,6 +633,7 @@ button {
     display: block;
     width: 100%;
     margin-bottom: 0.2rem;
+    text-align: center;
   }
 
   .post {
@@ -626,4 +643,217 @@ button {
   .post button {
     padding: 0.3rem 0.4rem;
   }
+
+  table thead{
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+  }
+
+  .table tr{
+    margin-bottom: 15px;
+  }
+
+  .table td{
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table-container1 .table td::before{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table-container2 .table td::before{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table-container1 td:nth-of-type(1):before { content: "Компания"; }
+  .table-container1 td:nth-of-type(2):before { content: "Должность"; }
+  .table-container1 td:nth-of-type(3):before { content: "Года"; }
+  .table-container1 td:nth-of-type(4):before { content: "Удаление"; }
+
+  .table-container2 td:nth-of-type(1):before { content: "Учреждение"; }
+  .table-container2 td:nth-of-type(2):before { content: "Степень"; }
+  .table-container2 td:nth-of-type(3):before { content: "Года"; }
+  .table-container2 td:nth-of-type(4):before { content: "Удаление"; }
+}
+
+@media screen and (min-width: 600px) and (max-width: 768px){
+  .container {
+    margin-top: 8rem;
+  }
+
+  .hide-sm {
+    display: none;
+  }
+
+  /* Text Styles */
+  .x-large {
+    font-size: 3rem;
+  }
+
+  .large {
+    font-size: 2rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  /* Navbar *//*
+  .navbar {
+    display: block;
+    text-align: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .navbar h3 {
+    margin-bottom: 1rem;
+  }
+*/
+
+
+
+  .navbar {
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+  }
+
+  .navbar ul li{
+    margin: 2px;
+  }
+
+  .navbar ul li a{
+    font-size: 1.3rem;
+  }
+
+
+  .navbar h3 {
+    margin-bottom: 1rem;
+    font-size: 1.8rem;
+  }
+
+
+
+  /* Profiles Page */
+  .profile {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .profile ul {
+    display: none;
+  }
+
+  /* Profile Page */
+
+  .profile-top img,
+  .profile img {
+    width: 200px;
+    margin: auto;
+  }
+
+  .profile-grid {
+    grid-template-areas:
+      'top'
+      'about'
+      'exp'
+      'edu'
+      'github';
+  }
+
+  .profile-about .skills {
+    flex-direction: column;
+  }
+
+  .dash-buttons a {
+    display: block;
+    width: 100%;
+    margin-bottom: 0.2rem;
+    text-align: center;
+  }
+
+  .post {
+    grid-template-columns: 1fr;
+  }
+  .post a,
+  .post button {
+    padding: 0.3rem 0.4rem;
+  }
+
+  table thead{
+    display: none;
+  }
+
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+  }
+
+  .table tr{
+    margin-bottom: 15px;
+  }
+
+  .table td{
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .table-container1 .table td::before{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table-container2 .table td::before{
+    position: absolute;
+    left: 0;
+    width: 50%;
+    padding-left: 15px;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: left;
+  }
+
+  .table-container1 td:nth-of-type(1):before { content: "Компания"; }
+  .table-container1 td:nth-of-type(2):before { content: "Должность"; }
+  .table-container1 td:nth-of-type(3):before { content: "Года"; }
+  .table-container1 td:nth-of-type(4):before { content: "Удаление"; }
+
+  .table-container2 td:nth-of-type(1):before { content: "Учреждение"; }
+  .table-container2 td:nth-of-type(2):before { content: "Степень"; }
+  .table-container2 td:nth-of-type(3):before { content: "Года"; }
+  .table-container2 td:nth-of-type(4):before { content: "Удаление"; }
 }

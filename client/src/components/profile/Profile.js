@@ -17,10 +17,7 @@ const Profile = ({getProfileById, profile: {profile, loading}, auth, match}) => 
     return (
         <Fragment>
             {profile === null || loading ? <Spinner /> : 
-                <Fragment>
-    
-                    {auth.isAuthenticated && auth.loading === false && auth.user._id === profile.user._id && (<Link to='/edit-profile' className='btn btn-light'>Редактировать профиль</Link>)}
-
+                <Fragment>   
                     <div class="profile-grid my-1">
                         <ProfileTop profile={profile} />
                         <ProfileAbout profile={profile} />
@@ -56,6 +53,12 @@ const Profile = ({getProfileById, profile: {profile, loading}, auth, match}) => 
                                 <ProfileGithub username={profile.githubusername} />
                             )
                         }
+
+                        
+                    </div>
+                    
+                    <div className="edit-profile-btn-cont">
+                        {auth.isAuthenticated && auth.loading === false && auth.user._id === profile.user._id && (<Link to='/edit-profile' className='editbtn btn btn-light'>Редактировать профиль</Link>)}
                     </div>
                 </Fragment>
             }
