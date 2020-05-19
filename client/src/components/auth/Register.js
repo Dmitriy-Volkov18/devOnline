@@ -1,5 +1,4 @@
 import React, {Fragment, useState} from 'react'
-//import axios from 'axios'
 import {Link, Redirect} from 'react-router-dom'
 import {connect} from 'react-redux'
 import {setAlert} from '../../actions/alert'
@@ -29,7 +28,7 @@ export const Register = ({setAlert, register, isAuthenticated}) => {
     }
 
     if(isAuthenticated){
-        return <Redirect to="/currentProfile" />
+        return <Redirect to="/settings" />
     }
 
     return (
